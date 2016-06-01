@@ -18,6 +18,7 @@ class dlagrid:
 	grid = []
 	index1 = 0
 	index2 = 0
+	decision = False
 
 	def __init__(self):
 		return None
@@ -49,14 +50,37 @@ class dlagrid:
 		for row in self.grid :
 			print row
 		return None
+	
+	def isStuck(self):
+		for n in range(-1,2):
+			for p in range(-1,2):
+				a = self.index1 + n
+				b = self.index2 + p
+				if (a,b) != (self.index1, self.index2):
+					if 0 <= a <= 21 and 0 <= b <= 21 :
+						if self.grid[a][b] == 1:
+							self.decision = True
+		return self.decision
 
 	def diffuse(self):
-		x = randint(0,1)
-		y = randint(0,1)
-		z = choice([-1,1]) 
+		x = 0
+		y = 0
 
-		newIndex1 = self.index1 + x*z
-		newIndex2 = self.index2 + y*z
+		while (x == 0 and y == 0) : # Make sure particle is not stationary
+			x = choice([0,1,-1])
+			y = choice([0,1,-1])
+
+		if self.index1 == 0 :
+			x = 1
+		if self.index1 == 21 :
+			x = -1
+		if self.index2 == 0 :
+			y = 1
+		if self.index2 == 21 :
+			y = -1
+
+		newIndex1 = self.index1 + x
+		newIndex2 = self.index2 + y
 
 		print newIndex1, newIndex2
 
@@ -73,13 +97,10 @@ test = dlagrid()
 test.createGrid()
 test.showGrid()
 test.newParticle()
-test.showGrid()
-print "jkdhfdjkhfd\nljksdfks\njfsgklfj"
-test.diffuse()
-test.showGrid()
-	
-# Loop over rows.
-#for row in grid:
-#	print row
+while test.isStuck() == False :
+	print test.isStuck()
+	test.diffuse()
+	test.showGrid()
 
+	
 

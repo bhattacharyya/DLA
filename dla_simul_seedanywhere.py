@@ -38,13 +38,8 @@ class dlagrid:
 		nonZeroCell = True
 		self.decision = False
 		while nonZeroCell == True:
-			sides = choice(['topbottom', 'leftright'])
-			if sides == 'topbottom':
-				a = choice([0,501])
-				b = randint(0,501)
-			if sides == 'leftright':
-				a =  randint(0,501)
-				b = choice([0,501])
+			a = randint(0,501)
+			b = randint(0,501)
 			if self.grid[a][b] == 0:
 				self.grid[a][b] = 1
 				nonZeroCell = False

@@ -3,6 +3,9 @@
 from Tkinter import *
 from time import sleep
 
+gridSize = int(raw_input("Size of the square matrix : "))
+kappa = raw_input("Enter stickiness factor kappa : ")
+
 def draw():
 	x = 0
 	y = 0
@@ -14,13 +17,12 @@ def draw():
 		w.create_oval(x, y, x+1, y+1, fill="white")
 		x = int(coords[i])
 		y = int(coords[i+1])
-	numParticles = str((r+2/2)+1)+ "  particle , k = 1"	
-	w.create_text(250, 480, text=numParticles, fill="red", font="Helvetica 12 bold")
+	numParticles = str(((r+2)/2)+1)+ "  particle , k = " + kappa	
+	w.create_text(str(gridSize/2), str(gridSize-20), text=numParticles, fill="red", font="Helvetica 12 bold")
 
 root=Tk()
 root.wm_title("DLA Simulation")
-w = Canvas(root, width=501, height=501)
+w = Canvas(root, width=gridSize, height=gridSize)
 draw()
 w.pack()
 root.mainloop()
-#w.after(4000, draw)

@@ -4,7 +4,7 @@
 #                                                                        
 #  author  : Shantanu S. Bhattacharyya                                    
 #  date    : May 31, 2016
-#  updated : June 3, 2016 
+#  updated : June 4, 2016 
 #
 #  This code simulates the "Diffusion Limited Aggregation" based on the
 #  description written by Paul Bourke. The code is submitted as a part of

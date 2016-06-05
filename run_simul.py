@@ -3,7 +3,7 @@
 import dla_simul
 
 totalParticles = int(raw_input("Total particles to simulate : "))
-fivepercent = totalParticles/5
+tenpercent = totalParticles/10
 count = 0
 
 test = dla_simul.dlagrid()
@@ -15,7 +15,7 @@ for k in range(1,totalParticles+1):
 	while test.isStuck() == False :
 		test.diffuse()
 
-	if count % fivepercent == 0:
+	if count % tenpercent == 0:
 		print str(count) + " particles done"
 		test.getGrid("grid.txt")
 

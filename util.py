@@ -1,18 +1,5 @@
 #!/usr/bin/python
 
-################################################################################
-#                                                                        
-#  author  : Shantanu S. Bhattacharyya                                    
-#  date    : May 31, 2016
-#  updated : June 4, 2016 
-#
-#  This code simulates the "Diffusion Limited Aggregation" based on the
-#  description written by Paul Bourke. The code is submitted as a part of
-#  problem solving exercise sent to me.
-#
-################################################################################
-
-
 def readMatrixFile(matrixfile): # Reads the matrix output of DLA simulation,
 	f1 = open(matrixfile, "r") #      default "grid.txt"
 	lines = f1.readlines()
@@ -117,10 +104,13 @@ def particlesAround(matrixfile, row, column): # Returns how many particles are n
 	return count
 
 def avgNeighbor(matrixfile): # Average number of particles that any particle has in the grid
+	print "\nAnalyzing grid ... \n"
 	M = readMatrixFile(matrixfile)
 	count = 0
 	limit = dimension(matrixfile)
 	for i in range(0, limit):
+		if i % 5 == 0:
+			print "row " + str(i) + " analyzed"
 		for j in range(0, limit):
 			if M[i][j] == "1":
 				count += particlesAround(matrixfile, i, j)

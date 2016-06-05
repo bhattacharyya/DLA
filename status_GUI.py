@@ -2,6 +2,10 @@
 
 from Tkinter import *
 from time import sleep
+import util
+
+util.createCoords("grid.txt", "coord.txt")
+print "Total particles : ", util.particlesinMatrix("grid.txt")
 
 gridSize = int(raw_input("Size of the square matrix : "))
 #kappa = raw_input("Enter stickiness factor kappa : ")

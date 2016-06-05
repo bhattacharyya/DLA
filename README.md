@@ -16,4 +16,4 @@ Guess the stickiness factor kappa with
 
 ```python analyze.py```
 
-Please check the [wiki discussion page](https://github.com/bhattacharyya/DLA/wiki/Discussion) for some results and the thinking behing the code
+Please check the [wiki discussion page](https://github.com/bhattacharyya/DLA/wiki) for some results and the thinking behing the code

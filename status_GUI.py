@@ -7,8 +7,7 @@ import util
 util.createCoords("grid.txt", "coord.txt")
 print "Total particles : ", util.particlesinMatrix("grid.txt")
 
-gridSize = int(raw_input("Size of the square matrix : "))
-#kappa = raw_input("Enter stickiness factor kappa : ")
+gridSize = util.dimension("grid.txt")
 
 def draw():
 	x = 0
@@ -22,7 +21,6 @@ def draw():
 		x = int(coords[i])
 		y = int(coords[i+1])
 	numParticles = str(((r+2)/2)+1)+ "  particles "
-#	w.create_text(str(gridSize/2), str(gridSize-20), text=numParticles, fill="red", font="Helvetica 12 bold")
 
 root=Tk()
 root.wm_title("DLA Simulation")

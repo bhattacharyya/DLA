@@ -2,14 +2,13 @@
 
 import dla_simul
 
-totalParticles = int(raw_input("Total particles to simulate : "))
-tenpercent = totalParticles/10
 count = 0
 
 test = dla_simul.dlagrid()
 test.createGrid()
 
-for k in range(1,totalParticles+1):
+tenpercent = test.numberOfParticles()/10
+for k in range(1,test.numberOfParticles()+1):
 	count += 1
 	test.newParticle()
 	while test.isStuck() == False :
